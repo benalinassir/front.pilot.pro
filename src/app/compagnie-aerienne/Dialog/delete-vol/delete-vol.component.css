@@ -1,0 +1,61 @@
+.dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dialog {
+    background-color: #fff; /* Fond blanc */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dialog h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .dialog p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .dialog-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .dialog-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancel-button {
+    background-color: #ddd; /* Fond gris clair */
+    color: #333; /* Texte noir */
+    margin-right: 10px;
+  }
+  
+  .delete-button {
+    background-color: #ff6347; /* Fond rouge */
+    color: #fff; /* Texte blanc */
+  }
+  
+  .delete-button:hover {
+    background-color: #cc4534; /* Couleur de fond rouge plus foncée au survol */
+  }
+  

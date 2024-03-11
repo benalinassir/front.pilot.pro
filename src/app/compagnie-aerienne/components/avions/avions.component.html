@@ -1,0 +1,31 @@
+<h3>Liste des Avions</h3>
+
+<div class="example-container mat-elevation-z8">
+    <mat-form-field>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+    </mat-form-field>
+    <mat-table #table [dataSource]="dataSource" matSort>
+
+        <ng-container matColumnDef="numavion">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Numero Avion </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.numAvion}} </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="nomavion">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Nom Avion </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.nomAvion}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="capacite">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Capacite </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.capacite}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="localisation">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Localisation </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.localisation}} </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>

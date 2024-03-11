@@ -1,0 +1,56 @@
+<form style="padding-top: 10% ;padding-left: 10%;padding-right: 10%;" class="example-form" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Numéro de Vol</mat-label>
+      <input matInput type="text" formControlName="numVol">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Pilote</mat-label>
+      <mat-select formControlName="numPilote" [placeholder]="'Choisir un pilote'">
+        <mat-option *ngFor="let pilot of pilotes" [value]="pilot.numPilote">
+          {{ pilot.nomPilote }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+
+    <mat-form-field>
+      <mat-label>avion</mat-label>
+      <mat-select formControlName="numAvion" [placeholder]="'Choisir un avion'">
+        <mat-option *ngFor="let avion of avions" [value]="avion.numAvion">
+          {{ avion.nomAvion }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Ville de Départ</mat-label>
+      <input matInput type="text" formControlName="villeDepart">
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Ville d'Arrivée</mat-label>
+      <input matInput type="text" formControlName="villeArrivee">
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Heure de Départ</mat-label>
+      <input matInput type="time" formControlName="heureDepart">
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <mat-form-field>
+      <mat-label>Heure d'Arrivée</mat-label>
+      <input matInput type="time" formControlName="heureArrivee">
+    </mat-form-field>
+  </div>
+
+  <div class="form-row">
+    <button mat-raised-button color="primary" type="submit">Ajouter Vol</button>
+  </div>
+</form>

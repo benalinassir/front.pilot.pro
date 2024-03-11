@@ -1,0 +1,67 @@
+<h3>Liste des Voles</h3>
+<div class="example-container mat-elevation-z8" >
+  <mat-form-field>
+    <input matInput (keyup)="applyFilter($event)" placeholder="Filter">
+  </mat-form-field>
+  <mat-table #table [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="numvol">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Numero Vol </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.numvol}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="numavion">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Numero Avion </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.numavion}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="numpilote">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Numuro Pilote </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.numpilote}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="villedep">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ville Depart </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.villedep}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="heuredep">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Heure Depart </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.heuredep}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="villearr">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> ville Arriver </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.villearr}} </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="heurearr">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Heure Arriver </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.heurearr}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <!-- Bouton pour consulter -->
+        <!-- <button mat-icon-button color="primary" (click)="consultVol(element)">
+            <mat-icon>visibility</mat-icon>
+          </button> -->
+        <!-- Bouton pour supprimer -->
+        <button mat-icon-button color="warn" (click)="deleteVol(element)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <!-- Bouton pour modifier -->
+        <!-- <button mat-icon-button color="accent" (click)="editVol(element)">
+            <mat-icon>edit</mat-icon>
+          </button> -->
+      </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+</div>
+<div class="example-button-container add-vol">
+  <button mat-fab color="primary" aria-label="Example icon button with a delete icon" (click)="addVol()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,44 @@
+/* Pour les écrans de petite taille */
+@media (max-width: 600px) {
+    .example-container {
+      overflow-x: auto;
+    }
+    .mat-table {
+      width: 100%;
+    }
+    .mat-mdc-form-field {
+      width: 100%;
+    }
+    .action-column {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    .action-button {
+      margin: 0 2px;
+    }
+  }
+  
+  /* Pour les écrans de taille moyenne à grande */
+  @media (min-width: 601px) {
+    .example-container {
+      display: block;
+    }
+    .mat-table {
+      width: 100%;
+    }
+    .mat-mdc-form-field {
+      width: 100%;
+    }
+    td, th {
+      width: 25%;
+    }
+  }
+  
+  .example-button-container.add-vol {
+    position: fixed;
+    bottom: 20px; /* Réglez cette valeur selon votre besoin */
+    left: 95%; /* Place le bouton au centre de la page */
+    transform: translateX(-50%);
+    z-index: 1000; /* Assure que le bouton est au-dessus de tout autre contenu */
+}

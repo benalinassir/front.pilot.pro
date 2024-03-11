@@ -1,0 +1,16 @@
+/* dialog-content.component.css */
+.dialog-content {
+    padding: 24px;
+    font-size: 16px;
+  }
+  
+  .dialog-actions {
+    padding: 8px 24px 24px;
+    justify-content: flex-end;
+  }
+  
+  .mat-button {
+    min-width: 64px;
+    margin-left: 8px;
+  }
+  
